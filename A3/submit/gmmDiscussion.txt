@@ -1,0 +1,51 @@
+=================Experiments=================
+Set MaxItr=1, Speaker=32, Vary M
+M=3, accuracy=0.687500
+M=5, accuracy=0.937500
+M=8, accuracy=1.000000
+
+Set M=3, Speaker=32, Very MaxItr
+MaxItr=1, accuracy=0.750000
+MaxItr=5, accuracy=0.968750
+MaxItr=10, accuracy=0.968750
+
+Set M=3, MaxItr=1, Vary # of speakers
+Speakers=5, accuracy=1.000000
+Speakers=10, accuracy=0.909091
+Speakers=32, accuracy=0.750000
+
+1. Decrease M
+As M decreases, the accuracy decreases. Low M makes the model have fewer 
+gaussian components, therefore making the model too simple to classify complex 
+speech data. I set MaxItr low and # of speakers high, to make the classfication
+difficault, otherwise the trend does not appear.
+
+2. Decrease MaxItr
+As MaxItr decreases, the accuracy decreases, this is because with too few 
+iterations, the model is not fully trained against the training data, which 
+makes it more likely to make mistakes.
+
+3. Decrease # of speakers
+As # of speakers decrease, the accuracy increases. This is because the model is 
+less likely to make mistakes if the number of options are lower, even if the 
+model is not fully trained. M and MaxItr are forced to be low, otherwise the
+model is too well trained, and will almost always make the right decision.
+
+====================Discussion========================
+1. How might you improve the classification accuracy of the Gaussian mixtures, 
+without adding more training data?
+As the experiments suggest, increasing MaxItr and M may help improve the 
+classification accuracy. Increase MaxItr will give the model more chance to 
+learn the training data. Increase M increase the complexity of the gaussian 
+mixture, potentially reduces underfitting if the training data contains more 
+than 32 speakers.
+
+2. When would your classifier decide that a given test utterance comes from none 
+of the trained speaker models, and how would your classifier come to this 
+decision?
+By default, the program outputs k most likely candidates, if their likelyhood 
+values are low enough, we can consider them not part of the training speakers.
+
+3.Can you think of some alternative methods for doing speaker identification 
+that don’t use Gaussian mixtures?
+We can use an end-to-end neural network, as discussed in the lecture.

@@ -1,0 +1,7 @@
+0.39575,0.26275,0.425375,0.41525,0.4455
+0.374625,0.24575,0.426875,0.425875,0.44525
+0.398,0.270625,0.427,0.41425,0.45225
+0.372875,0.262,0.406625,0.438,0.44625
+0.391125,0.268375,0.414875,0.405375,0.448875
+0.00018954465345294216,7.54251133286294e-07,0.002520233391342594,0.011865835834562823
+Smaller p-value means the best classifer is significantly better the current classifier. The best classifier (adaboost) is significantly better than the classifier 1 and 2 classifiers, but close to the performance of the 4th one.

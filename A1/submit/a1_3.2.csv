@@ -1,0 +1,2 @@
+0.36475,0.4225,0.435375,0.43575,0.434625
+The trend is, as the number of training samples increase, the accuracy increases. This is expected because increase in training set leads to more diversified data and reduces over-fitting, this can help the classifier to make more accurate decisions.

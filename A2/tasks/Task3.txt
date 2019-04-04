@@ -1,0 +1,32 @@
+Perplexity English
+No smoothing    13.747724937746758
+delta = 0.01    41.82772596209653
+delta = 0.1     60.066454924605985
+delta = 0.5     98.95801085546483
+delta = 0.8     119.39517976684775
+
+Perplexity French
+No smoothing    13.269717889802951
+delta = 0.01    40.5331302065035
+delta = 0.1     62.30430366563258
+delta = 0.5     108.49443451878372
+delta = 0.8     133.34448254522675
+
+Trend:
+For both the French and English corpus, higher delta value will result in higher perplexity.
+
+Effect of delta:
+Smoothing will cause the probability of in-vocab words to be distributed to unseen events(OOV words).
+Therefore no smoothing will result in the best(lowest) perplexity value.
+The higher the delta, the lower the probability of in-vocab words will become, therefore increasing perplexity
+(producing a worse model).
+In conclusion, to produce a good language model and avoid 0 probability on unseen events, a low delta should be chosen.
+
+MLE perplexity
+Our MLE perplexity in English and French are both around 13. These are much lower than the perplexity of real
+word corpus. For example, the lowest perplexity of Brown corpus is 247, according to Wikipedia.
+Reasoning:
+In our perplexity calculations, we remove the sentences that cause log prob to be -inf, this makes our
+perplexity lower than normal, sine low log(prob(sentence)) correspond to high perplexity.
+Also, parliament documents are in the same format, which means most words that appears in the training corpus appears
+in the test corpus.

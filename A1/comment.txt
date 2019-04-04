@@ -1,0 +1,8 @@
+3.2
+The trend is, as the number of training samples increase, the accuracy increases. This is expected because increase in training set leads to more diversified data and reduces over-fitting, this can help the classifier to make more accurate decisions.
+3.3
+Number of first-person pronouns, Number of adverbs, receptiviti_intellectual, are common in both. Number of first person pronouns is important because it may represent if a person is self-centered or not. Number of adverbs are important because it represents if the comment is descriptive. receptiviti_intellectual may represent if the commment is intelligent.
+p-values are generally lower given more data, since with more data, we can be more certain that the selected features are significant.
+Features [0 10 21 143 149] which are number of first person pronouns, Number of adverbs, Standard deviation of IMG, receptiviti_health_oriented, receptiviti_intellectual. Number of first person pronouns is important because it may represent if a person is self-centered or not. Number of adverbs are important because it represents if the comment is descriptive. Imagability is importance since it is related to the correctness of the words. receptiviti_health_oriented may indicate the life-style of the commenter. receptiviti_intellectual may represent if the commment is intelligent. These language traits combined may relate to the political affiliation of the commenter.
+3.4
+Smaller p-value means the best classifer is significantly better the current classifier. The best classifier (adaboost) is significantly better than the first 3 classifiers but close to the performance of the 4th one.

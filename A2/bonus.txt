@@ -1,0 +1,3 @@
+Implemented good turing smoothing, however there are a number of implementation details we need to consider.
+1. For n=2, we need to find words which occur 3 times in the corpus, and it may no exist.
+2. For the word with highest count n, the word which occurs n+1 times does not exist.

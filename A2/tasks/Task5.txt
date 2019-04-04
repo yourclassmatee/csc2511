@@ -1,0 +1,47 @@
+Iterations = 100
+
+----------Evaluation START----------
+### Evaluating AM model: am_1k ### 
+BLEU scores with N-gram (n) = 1: 	0.4118	0.4444	0.6154	0.4286	0.5385	0.6000	0.3077	0.6250	0.3750	0.3000	0.5385	0.4286	0.6667	0.4444	0.4617	0.6134	0.5000	0.4993	0.3333	0.5429	0.6250	0.6364	0.4286	0.5294	0.3750
+BLEU scores with N-gram (n) = 2: 	0.2269	0.2357	0.3203	0.1816	0.2996	0.4472	0.1601	0.4226	0.0000	0.0000	0.3669	0.2568	0.4082	0.2287	0.2569	0.5065	0.3333	0.3628	0.1741	0.4047	0.4226	0.5045	0.3145	0.3151	0.2315
+BLEU scores with N-gram (n) = 3: 	0.0000	0.0000	0.0000	0.0000	0.0000	0.3684	0.0000	0.0000	0.0000	0.0000	0.2304	0.0000	0.0000	0.1484	0.0000	0.3614	0.2404	0.0000	0.0000	0.2646	0.0000	0.3047	0.2020	0.1877	0.0000
+
+
+### Evaluating AM model: am_10k ### 
+BLEU scores with N-gram (n) = 1: 	0.3529	0.4444	0.5385	0.5714	0.5385	0.6000	0.3846	0.7500	0.5000	0.5000	0.6154	0.3571	0.5556	0.5000	0.4617	0.5367	0.6000	0.5493	0.5000	0.5429	0.7500	0.7273	0.5000	0.5882	0.3750
+BLEU scores with N-gram (n) = 2: 	0.1485	0.2357	0.2996	0.2965	0.2118	0.4472	0.1790	0.6547	0.0000	0.2357	0.3922	0.2344	0.2635	0.2970	0.3146	0.4237	0.4472	0.3805	0.2132	0.4047	0.5669	0.6030	0.3397	0.3321	0.2315
+BLEU scores with N-gram (n) = 3: 	0.0000	0.0000	0.0000	0.0000	0.0000	0.3684	0.0000	0.5228	0.0000	0.0000	0.2409	0.0000	0.0000	0.1767	0.1976	0.2547	0.3684	0.0000	0.0000	0.2646	0.3770	0.4323	0.2126	0.1945	0.0000
+
+
+### Evaluating AM model: am_15k ### 
+BLEU scores with N-gram (n) = 1: 	0.3529	0.4444	0.4615	0.5000	0.5385	0.6000	0.4615	0.6250	0.3750	0.4000	0.6154	0.3571	0.6667	0.5000	0.3957	0.5367	0.6000	0.4993	0.5000	0.5429	0.7500	0.6364	0.5000	0.5294	0.3750
+BLEU scores with N-gram (n) = 2: 	0.1485	0.2357	0.2774	0.1961	0.2118	0.4472	0.1961	0.5175	0.0000	0.2108	0.3922	0.2344	0.2887	0.2970	0.2912	0.4237	0.4472	0.3245	0.2132	0.4047	0.5669	0.4369	0.3397	0.3151	0.2315
+BLEU scores with N-gram (n) = 3: 	0.0000	0.0000	0.0000	0.0000	0.0000	0.3684	0.0000	0.3547	0.0000	0.0000	0.2409	0.0000	0.0000	0.1767	0.1877	0.2547	0.3684	0.0000	0.0000	0.2646	0.3770	0.2768	0.2126	0.1877	0.0000
+
+
+### Evaluating AM model: am_30k ### 
+BLEU scores with N-gram (n) = 1: 	0.4706	0.4444	0.4615	0.5000	0.4615	0.6000	0.4615	0.6250	0.5000	0.3000	0.6154	0.2857	0.5556	0.5000	0.4617	0.4600	0.6000	0.5992	0.4167	0.3619	0.8750	0.7273	0.5000	0.4118	0.3750
+BLEU scores with N-gram (n) = 2: 	0.1715	0.2357	0.2774	0.1961	0.1961	0.4472	0.1961	0.4226	0.0000	0.0000	0.3922	0.1482	0.2635	0.2970	0.3146	0.3397	0.4472	0.3974	0.1946	0.1908	0.7906	0.6030	0.3397	0.2269	0.2315
+BLEU scores with N-gram (n) = 3: 	0.0000	0.0000	0.0000	0.0000	0.0000	0.3684	0.0000	0.3099	0.0000	0.0000	0.2409	0.0000	0.0000	0.1767	0.1976	0.2198	0.3684	0.2066	0.0000	0.0000	0.6786	0.4323	0.2126	0.0000	0.0000
+
+
+----------Evaluation END----------
+
+Trends bleu score vs # of training sentences:
+The expected trends is: the more sentences used in training, the higher the bleu score should be. This is because P(f|e)
+should become more accurate as the training data is increase.
+However, this is not always the case in my results. My speculation is the limitation of the model has been reached,
+since only considering word alignment is unlikely to result in a grammatically correct sentence.
+
+Trends bleu score vs n:
+Unigram bleu score is much higher than bigram which is much higher than trigram. There are many zeros in the trigram
+blue score, this is expected since our model does not capture phrase alignments, so many of the trigram in the reference
+sentences may not exist in the candidate.
+
+References
+The hansard almost always better than the google translation. The reason is that the hansard is translated by a human
+expert, with takes into account the context of the sentences, which makes it more natural than the google translation.
+However, the google translation is mostly correct.
+
+Using more than 2 references will most likely result in an increase in the bleu score, since there is more opportunity
+for words from the candidate to appear in one of the references.
